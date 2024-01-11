@@ -1,7 +1,7 @@
 
 function addUpdatedDate(layerName){
   const request = new XMLHttpRequest()
-  request.open('GET','https://api.mapbox.com/tilesets/v1/' + mapbox_username + '?access_token=' + mapbox_secret_token)
+  request.open('GET','https://api.mapbox.com/tilesets/v1/' + mapbox_username)
   request.onload = function () {
     if (request.status >= 200 && request.status < 400) {
       const data = JSON.parse(request.responseText);
