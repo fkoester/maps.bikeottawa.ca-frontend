@@ -69,9 +69,7 @@ button::-moz-focus-inner {
 
 @font-face {
   font-family:'Open Sans';
-    src:url('/web/20221227005253im_/https://www.mapbox.com/base/latest/opensans-regular.eot');
-    src:url('/web/20221227005253im_/https://www.mapbox.com/base/latest/opensans-regular.eot#iefix') format('embedded-opentype'),
-        url('/web/20221227005253im_/https://www.mapbox.com/base/latest/opensans-regular.woff') format('woff');
+    src: url('./opensans-regular.woff') format('woff');
   }
 
 @font-face {
@@ -83,9 +81,7 @@ button::-moz-focus-inner {
 
 @font-face {
   font-family:'Open Sans Bold';
-    src:url('/web/20221227005253im_/https://www.mapbox.com/base/latest/opensans-bold.eot');
-    src:url('/web/20221227005253im_/https://www.mapbox.com/base/latest/opensans-bold.eot#iefix') format('embedded-opentype'),
-        url('/web/20221227005253im_/https://www.mapbox.com/base/latest/opensans-bold.woff') format('woff');
+    src: url('./opensans-bold.woff') format('woff');
   }
 
 @font-face {
@@ -1571,9 +1567,7 @@ h2 .dark > a[href^='#'] {
 ------------------------------------------------------- */
 @font-face {
   font-family:'icon';
-    src:url('/web/20221227005253im_/https://www.mapbox.com/base/latest/icon.eot?v=29');
-    src:url('/web/20221227005253im_/https://www.mapbox.com/base/latest/icon.eot?v=29#iefix') format('embedded-opentype'),
-        url('/web/20221227005253im_/https://www.mapbox.com/base/latest/icon.woff?v=29') format('woff');
+    src: url('./icon.woff') format('woff');
   font-weight:normal;
   font-style:normal;
   }
