@@ -33,7 +33,7 @@ body { margin:0; padding:0; }
                     <div id='closebtn' class='fill-darken2 pad1 icon close button fr' onclick="toggle('legendbtn');toggle('legend');"></div>
                     <div class='clearfix'></div>
                     <div class='pad1'>
-                        <h5 class="dark">Cycling Level of Traffic Stress</h5>
+                        <h5 class="dark">OSM Cycling Quality Index</h5>
                         <form>
                             <fieldset class='checkbox-pill clearfix fill-darken2'>
                                 <input type='checkbox' id='legend-lts1'>
@@ -73,10 +73,10 @@ function toggle(id) { document.getElementById(id).classList.toggle("hidden"); }
 
 // level of stress
 var ltsLayers = [
-    { id: "legend-lts1", color: '#009e73', name: 'LTS 1 - Suitable for children', opacity: 0.9, filter: ['==', "tag", "lts1"] },
-    { id: "legend-lts2", color: '#56b4e9', name: 'LTS 2 - Low stress', opacity: 0.9, filter: ['==', "tag", "lts2"] },
-    { id: "legend-lts3", color: '#e69f00', name: 'LTS 3 - Medium stress', opacity: 0.9, filter: ['==', "tag", "lts3"] },
-    { id: "legend-lts4", color: '#d55e00', name: 'LTS 4 - High stress', opacity: 0.9, filter: ['==', "tag", "lts4"] }
+    { id: "legend-lts1", color: '#009e73', name: '>=75 - Suitable for children', opacity: 0.9, filter: ['>=', "index", 75] },
+    { id: "legend-lts2", color: '#56b4e9', name: '50-75 - Low stress', opacity: 0.9, filter: ['all', ['>=', "index", 50], ['<', "index", 75]] },
+    { id: "legend-lts3", color: '#e69f00', name: '25-50 - Medium stress', opacity: 0.9, filter: ['all', ['>=', "index", 25], ['<', "index", 50]] },
+    { id: "legend-lts4", color: '#d55e00', name: '<25 - High stress', opacity: 0.9, filter: ['<', "index", 25] }
 ];
 
 // mapbox
@@ -118,7 +118,7 @@ function init() {
             "type": "line",
             "source": {
                 type: 'vector',
-                url: 'mapbox://' + mapbox_username + '.lts',
+                url: 'mapbox://' + mapbox_username + '.ocqi',
             },
             "filter": layer.filter,
             "source-layer": "layer",
